@@ -6,34 +6,35 @@ import Typography from '@material-ui/core/Typography';
 
 import * as React from "react";
 import './../App.tsx';
-
+// These are the states of the breed list portion
+// breed - the current breed
+// cardArray - an array full of the card tags
+// result - a random image for that breed
 interface IBreedState {
-        breedList: any,
+        breed: any,
         cardArray: any,
         result: any
         
 }
-export default class FirstComponent extends React.Component<{},IBreedState> {
-
+export default class Breed extends React.Component<{},IBreedState> {
 constructor(props: any) {
         super(props);
         this.state = ({
-                breedList: "",
+                breed: "",
                 cardArray: [],
                 result: ""
                 
         })
 }
 
-// public createCardForBreed() {
-//         const body = document.getElementsByTagName('body')[0];
-//         const element = document.createElement('div');
-//         element.innerHTML = '<CardActionArea><CardMedia component="img" className="card" image={this.state.result} title={this.state.breedList}/> <CardContent><Typography variant="headline" component="h2">{this.state.breedList}</Typography></CardContent></CardActionArea>';        
-//         body.appendChild(element);
-// }
-
+/**
+ * This function asynchronously calls for the list of breeds and then stores all of the information
+ * into an array for of cards. (From material-ui)
+ */
 public async getBreedList() {
+        // Fetches the list of breeds on another thread
         const breedList = await fetch('https://dog.ceo/api/breeds/list/all');
+        // Converts the response object into a javascript object
         const breedData = await breedList.json();
         const list = Object.keys(breedData.message);
         const cardList:any = [];
@@ -41,9 +42,10 @@ public async getBreedList() {
                 const dogApi = await fetch('https://dog.ceo/api/breed/'+element+'/images/random');
                 const data = await dogApi.json();
                 this.setState({
-                        breedList: element,
+                        breed: element,
                         result: data.message
                 })
+                // Creating the card for the specific breed
                 cardList.push(
                 <div style={{ float:'left',padding:'15px',borderWidth:'10px'}}>
                         <CardActionArea style={{background: 'white', borderRadius: '5%'}}>
@@ -56,13 +58,13 @@ public async getBreedList() {
                                                 width: '220px'
                                         }}
                                         image={this.state.result}
-                                        title={this.state.breedList}
+                                        title={this.state.breed}
                                 />
                                 <CardContent>
                                         <Typography 
                                         variant="headline"
                                         component="h1">
-                                        {this.state.breedList}
+                                        {this.state.breed}
                                         </Typography>
                                 </CardContent>
                         </CardActionArea>
@@ -74,11 +76,10 @@ public async getBreedList() {
         })
 }
 
+// Upon loading the breedlist is set up
 public componentDidMount() {
         this.getBreedList();
 }
-
-
 
 public render() {
         return (
