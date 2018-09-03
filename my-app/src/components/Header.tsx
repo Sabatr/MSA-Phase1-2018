@@ -7,16 +7,13 @@ export const Header: React.StatelessComponent<{}> = () => {
     return (
         <Navbar className = "navbar">
             <Navbar.Header>
-                <Navbar.Brand>
-                    <Link to="/">Test</Link>
+                <Navbar.Brand style={{height:'50px'}}>
+                    <Link to="/">DogPic</Link>
                 </Navbar.Brand>
             </Navbar.Header>
             <Nav>
-                <IndexLinkContainer to="/FirstComponent">
-                    <NavItem>Page 1</NavItem>
-                </IndexLinkContainer>
-                <IndexLinkContainer to="/SecondComponent">
-                    <NavItem>How it works.</NavItem>
+                <IndexLinkContainer to="/Breed">
+                    <NavItem>List Of Breeds</NavItem>
                 </IndexLinkContainer>
             </Nav>
         </Navbar>
