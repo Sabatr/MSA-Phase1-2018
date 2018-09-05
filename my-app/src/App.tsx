@@ -79,12 +79,28 @@ export default class App extends React.Component<{},IState> {
    * This function handles any clicks to the button
    */
   public handleClick = () => {
+    this.setState({
+      loading: "loading"
+    })
     if (this.state.input !== "") {
-      this.setState({
-        loading: "loading"
-      })
       this.getDogApi(this.state.input);
+    } else {
+      this.getRandom();
     }
+  }
+
+  public componentDidMount() {
+    this.setState({loading:"loading"});
+    this.getRandom();
+  }
+
+  public async getRandom() {
+    const dogApi = await fetch('https://dog.ceo/api/breeds/image/random');
+    const data = await dogApi.json();
+    this.setState({
+      loading: "has loaded",
+      results: data.message
+    })
   }
 
   /**
