@@ -6,7 +6,7 @@ There was also some use of material-ui for </p>
 <h4>Main</h4>
 <img src="http://g.recordit.co/yzhz3LCdK1.gif" alt="Main menu gif" width="400" height="200" />
 <h4>Listing</h4>
-<img src="https://media.giphy.com/media/1BeEG1Yxkdsc6Bvk8G/giphy.gif" alt="List gif" width="400" height="200" />
+<img src="https://thumbs.gfycat.com/SilverYoungAmericanratsnake-size_restricted.gif" alt="List gif" width="400" height="200" />
 
 <p>Here is an example of the use of material-ui. This is the TextField seen in the Main </p>
 
