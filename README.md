@@ -2,7 +2,7 @@
 <h2>Link to the website: https://randomdogpictures.azurewebsites.net/ </h2>
 <h5>Link to the api: https://dog.ceo/dog-api/ </h5>
 <p>This website was made using React Typescript. It uses an api to fetch for random images of dogs online.<br>
-There was also some use of material-ui for </p>
+There was also some use of material-ui for the buttons and stuff. </p>
 <h4>Main</h4>
 <img src="http://g.recordit.co/yzhz3LCdK1.gif" alt="Main menu gif" width="400" height="200" />
 <h4>Listing</h4>
