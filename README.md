@@ -49,3 +49,5 @@ this.setState({
 ```
 <img className="image" src={this.state.results} alt={this.state.results}/>
 ```
+
+<p> and yes the enter doesn't submit the textfield </p>
