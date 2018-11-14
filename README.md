@@ -1,5 +1,6 @@
 <h1> MSA-Phase1-2018</h1>
 <h2>Link to the website: https://randomdogpictures.azurewebsites.net/ </h2>
+<h4>NOTE: If the website doesn't work then my azure subscription has probably expired. </h4>
 <h5>Link to the api: https://dog.ceo/dog-api/ </h5>
 <p>This website was made using React Typescript. It uses an api to fetch for random images of dogs online.<br>
 There was also some use of material-ui for the buttons and stuff. </p>
